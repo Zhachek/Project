@@ -1,0 +1,40 @@
+//  Спрайты Sass
+
+@import "compass/utilities/sprites";
+@import "sprites/*.png";
+
+//	sprites with padding
+$icons: sprite-map("sprites/*.png", $spacing: 10px);
+
+// sized sprites
+@mixin image-size($path){
+	width: image-width($path);
+	height: image-height($path);
+}
+
+@mixin s($sprite, $map: $icons) {
+	background: sprite($map, $sprite) no-repeat;
+	//background-image: inline-image('icons/'+$sprite+'.png','image/png');
+	@include image-size(sprite-file($map, $sprite));
+}
+
+// no sized sprites
+@mixin image-nosize($path){
+	
+}
+
+@mixin sp($sprite, $map: $icons) {
+	background: sprite($map, $sprite) no-repeat;
+	//background-image: inline-image('icons/'+$sprite+'.png','image/png');
+	@include image-nosize(sprite-file($map, $sprite));
+}
+
+// @each $s in fb,vk,in {
+// 	.social__#{$s} {
+// 		@include s(#{$s});
+// 			&:hover {
+// 				@include s(#{$s}h);
+// 			}
+// 	}
+
+// }

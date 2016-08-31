@@ -1,0 +1,81 @@
+//  Примеси Sass
+
+/// Помощник для сброса внутреннего обтекания
+/// @author Николас Галлагер
+/// @link http://nicolasgallagher.com/micro-clearfix-hack/ Micro Clearfix
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+/// Помощник для определения размера
+/// @author Hugo Giraudel
+/// @param {Length} $width
+/// @param {Length} $height
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+// Медиа запросы
+@mixin media($w) {
+	@media only screen and (max-width: $w+'px'){
+		@content
+	}
+}
+
+/// медиа запросы
+$small: 320px;
+$large: 1024px;
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $small + 1) and (max-width: $large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $large) { @content; }
+  }
+}
+
+// Кнопка
+@mixin mybutton($width, $height, $font-size, $color) {
+	max-width: $width;
+	max-height: $height;
+	font-size: $font-size;
+	color: $color;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+// Цвет текста для форм
+@mixin placeholder-color($color) {
+	&:-moz-placeholder,
+	&::-moz-placeholder {
+		color: $color;
+		opacity: 1;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	&::-webkit-input-placeholder {
+		color: $color;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+}
+
+//Быстрое добавление шрифтов
+@mixin font($alias, $name) {
+	@font-face {
+		font-family: $alias;
+		src: url("../fonts/" + $name + ".eot");
+		src: url("../fonts/" + $name + ".eot?#iefix") format("embedded-opentype"), url("../fonts/" + $name + ".woff") format("woff"), url("../fonts/" + $name + ".ttf") format("truetype");
+		font-weight: normal;
+		font-style: normal;
+	}
+}

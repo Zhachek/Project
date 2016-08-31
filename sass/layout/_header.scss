@@ -1,0 +1,136 @@
+//  Стили для шапки сайта
+
+.header {
+	position: fixed;
+	top: 5%;
+	left: 20px;
+	width: 200px;
+	height: 90%;
+	margin-top: 10px;
+	border-right: 1px solid #e4e2e2;
+	background-color: #FFF;
+	-webkit-box-shadow: 1px 5px 9px 1px #ccc;
+	box-shadow: 1px 5px 9px 1px #ccc;
+	
+	&__inner {
+		height: 500px;
+		padding: 10px;
+		border-right: 2px solid #fff;
+	}
+}
+
+// Логотип
+.logo {
+
+	margin-top: 10px;
+	
+	&__img {
+		display: block;
+		max-width: 70%;
+		margin: 0 auto;
+	
+		&:hover {
+			-webkit-filter: grayscale(1);
+    		filter: grayscale(1);
+		    -webkit-transition: all 0.5s;
+		       -moz-transition: all 0.5s;
+		        -ms-transition: all 0.5s;
+		         -o-transition: all 0.5s;
+		            transition: all 0.5s;
+		}
+	}
+}
+
+// Социальные иконки
+.socials {
+	margin-top: 20px;
+	text-align: center;
+	
+	& a {
+		font-size: 20px;
+		color: #333;
+	}
+	
+
+	& .fa-odnoklassniki {
+		&:hover {
+			color: #F58220;
+			-webkit-transition: color 0.5s;
+			   -moz-transition: color 0.5s;
+			    -ms-transition: color 0.5s;
+			     -o-transition: color 0.5s;
+			        transition: color 0.5s;
+		}	
+	}
+
+	& .fa-vk {
+		&:hover {
+			color: #4D75A4;
+			-webkit-transition: color 0.5s;
+			   -moz-transition: color 0.5s;
+			    -ms-transition: color 0.5s;
+			     -o-transition: color 0.5s;
+			        transition: color 0.5s;
+		}
+	}
+
+	& .button {
+		display: inline-block;
+		padding: 10px;
+		
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	
+}
+
+//Форма поиска
+.search {
+	position: relative;
+	margin-top: 20px;
+	height: 20px;
+	
+	&__form {
+		position: relative;
+		display: block;
+		width: 70px;
+		margin: 0 auto;
+		border: 2px solid #333;
+		@include border-radius(3px);
+		-webkit-transition: width 1s;
+		   -moz-transition: width 1s;
+		    -ms-transition: width 1s;
+		     -o-transition: width 1s;
+		        transition: width 1s;
+	}
+
+	&__form_big {
+		width: 160px;
+		-webkit-transition: width 1s;
+		   -moz-transition: width 1s;
+		    -ms-transition: width 1s;
+		     -o-transition: width 1s;
+		        transition: width 1s;
+	}
+	
+	&__field {
+		display: block;
+		width: 85%;
+		padding: 2px 5px;
+		border-right: transparent;
+		font-size: 14px;
+	}
+
+
+	&__btn {
+		position: absolute;
+		top: 50%;
+		right: 3px;
+		margin-top: -7px;
+		background-color: transparent;
+		font-size: 14px;
+		@include border-right-radius(3px);
+		border-left: transparent;
+	}
+}

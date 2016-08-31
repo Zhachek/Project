@@ -1,0 +1,16 @@
+//  Стили для часто используемых элементов HTML
+
+@import "compass/css3";
+
+body {
+	background-color: #FFF;
+	padding: 20px 20px 20px 60px;
+}
+
+.wrap {
+	max-width: 100%;
+	height: 100%;
+	background-color: #F2F2F2;
+	padding: 20px;
+	@include border-top-radius(30px);
+}

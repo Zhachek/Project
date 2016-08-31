@@ -1,0 +1,39 @@
+//  Функции Sass
+
+/// Убрать единицы измерения
+@function strip-units($value) {
+  @return ($value / ($value * 0 + 1));
+}
+
+/// px to em
+$em-base: 16;
+
+@function em($pixels, $context: $em-base) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1em;
+}
+
+///px to rem
+@function rem($pxval) {
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+
+  $base: $em-base;
+  @if not unitless($base) {
+    $base: strip-units($base);
+  }
+  @return ($pxval / $base) * 1rem;
+}
+
+// calc-percent
+@function cp($target, $container) {
+  @return ($target / $container) * 100%;
+}

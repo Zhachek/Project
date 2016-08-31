@@ -1,0 +1,79 @@
+//  Стили для навигации сайта
+
+.menu {
+	margin-top: 45px;
+	text-align: center;
+	
+	&__item {
+		list-style-type: none;
+	}
+
+	&__item:nth-child(odd) a:hover {
+		color: #2D8F3B;
+	}
+
+	&__item:nth-child(even) a:hover {
+		color: #337ab7;
+	}
+	
+
+	&__link {
+		position: relative;
+		display: block;
+		padding: 9px 10px;
+		margin: 5px 10px;
+		text-decoration: none;
+		overflow: hidden;
+		outline: none;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: #333;
+		font-size: 15px;
+		
+		
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	&__link::before,
+	&__link::after {
+		content: '';
+		position: absolute;
+		width: 80%;
+		height: 3%;
+		background-color: #ccc;
+		transition: transform .6s;
+	}
+
+	&__link::before {
+		top: 5%;
+		left: 0;
+		transform: translate3d(-105%, 0, 0);
+	}
+
+	&__link::after {
+		bottom: 0;
+		left: 16%;
+		transform: translate3d(105%, 0, 0);
+	}
+
+	&__link:hover::before {
+		transform: translate3d(13%, 0, 0);
+	}
+
+	&__link:hover::after {
+		transform: translate3d(-7%, 0, 0);
+	}
+
+	span::before,
+	span::after {
+		transition: transform .5s, opacity .5s;
+	}
+}
+
+.company {
+	margin-top: 30px;
+	text-align: center;
+	font-size: 13px;
+}
