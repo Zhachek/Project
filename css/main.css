@@ -155,9 +155,10 @@ body {
 }
 
 .content {
-  height: 100%;
+  height: 105%;
   margin-left: 150px;
   padding: 10px;
+  overflow: hidden;
   border: 20px solid #fff;
   background-color: #f1eded;
   -webkit-box-shadow: inset 0 0 10px #333;
@@ -180,8 +181,8 @@ body {
   text-shadow: 0 1px 1px #333;
 }
 .slider__image {
-  width: 939px;
-  height: 430px;
+  width: 100%;
+  height: auto;
 }
 
 .active .slider__title {
@@ -220,7 +221,7 @@ body {
 }
 .header {
   position: fixed;
-  top: 5%;
+  top: 30px;
   left: 20px;
   width: 200px;
   height: 90%;
