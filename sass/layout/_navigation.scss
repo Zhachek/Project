@@ -25,10 +25,12 @@
 		text-decoration: none;
 		overflow: hidden;
 		outline: none;
-		font-weight: bold;
 		text-transform: uppercase;
 		color: #333;
-		font-size: 15px;
+		font-size: 14px;
+		font-family: 'PT Serif', serif;
+		font-weight: bold;
+		
 		
 		
 		&:hover {
@@ -47,13 +49,13 @@
 	}
 
 	&__link::before {
-		top: 5%;
+		top: 0;
 		left: 0;
 		transform: translate3d(-105%, 0, 0);
 	}
 
 	&__link::after {
-		bottom: 0;
+		bottom: 2px;
 		left: 16%;
 		transform: translate3d(105%, 0, 0);
 	}

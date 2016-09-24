@@ -1,0 +1,153 @@
+//  Стили, особые для страницы каталога
+
+.catalog-page {
+	@extend %clr;
+	position: relative;
+	height: 102%;
+	overflow: auto;
+	margin: 1px 0 0 170px;
+	padding: 10px;
+	color: #555;
+	background-color: rgb(255,255,255); // Old browsers
+	@include filter-gradient(#ffffff, #c7c7c7, horizontal); // IE6-9 fallback on horizontal gradient
+	@include background-image(linear-gradient(left top, rgba(255,255,255,1) 0%,rgba(199,199,199,1) 100%));
+	
+	&__title {
+		margin-bottom: 20px;
+		padding: 0 0 0 10px;
+		font-size: 30px;
+		font-weight: 300;
+		background-color: #FFF;
+		box-shadow: 0px 5px 2px -4px #a2a2a2;
+	}
+
+	&__brands {
+		margin-top: 70px;
+	}
+
+
+	.brands__list {
+		@extend %clr;
+	}
+
+	.brands__item {
+		float: left;
+		position: relative;
+	}
+
+	.brands__link {
+		padding: 10px 20px;
+	}
+
+	@each $s in italy,spain,poland,russia, belarus, ukraine,china {
+		.icon__#{$s} {
+			@include s(#{$s});
+				// &:hover {
+				// 	@include s(#{$s}h);
+				// }
+		}
+	}
+
+	.icon__flags {
+		display: block;
+		position: absolute;
+		top: -38px;
+		left: 50%;
+		margin-left: -16px;
+	}
+
+	.fa-angle-down {
+		position: absolute;
+		bottom: 50%;
+		margin-bottom: 20px;
+		right: 13px;
+	}
+
+	&__products {
+		margin-top: 20px;
+	}
+}
+
+.products {
+	&__item {
+
+	}
+
+	&__img__wrap {
+		overflow: hidden;
+	}
+
+	&__img {
+		width: 100%;
+		
+		&:hover {
+			-webkit-transform: scale(1.1);
+			   -moz-transform: scale(1.1);
+			    -ms-transform: scale(1.1);
+			     -o-transform: scale(1.1);
+			        transform: scale(1.1);
+		    -webkit-transition: transform 1.5s;
+		       -moz-transition: transform 1.5s;
+		        -ms-transition: transform 1.5s;
+		         -o-transition: transform 1.5s;
+		            transition: transform 1.5s;
+			-webkit-filter: brightness(1.1);
+			filter: brightness(1.1);
+		}
+	}
+
+	&__title {
+		margin: 20px 0;
+		border-top: 1px solid #909090;
+		border-bottom: 1px solid #909090;
+		color: #555;
+		text-align: center;
+	}
+}
+
+.products__sort {
+	position: absolute;
+	right: 20px;
+	top: 72px;
+}
+
+.sort {
+		
+	&__button {
+		text-align: center;
+		cursor: pointer;
+	}
+
+	&__title {
+		margin-top: 6px;
+		font-size: 15px;
+	}
+
+	&__menu {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 200px;
+		height: 400px;
+		padding: 15px;
+		background-color: #FFF;
+		z-index: 10;
+		display: none;
+	}
+
+	&__form {
+		height: auto;
+	}
+
+	&__list {
+		height: auto;
+	}
+}
+
+
+.fa-bars {
+	font-size: 25px;
+}
+
+
+
